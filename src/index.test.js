@@ -13,9 +13,20 @@
 // 0 => "Fizzbuzz"
 
 const fizzbuzz = (number) => {
-  return "Fizzbuzz";
+  if (number % 5 === 0 && number % 3 === 0) return 'Fizzbuzz';
+  if (number % 3 === 0) return 'Fizz';
+  if (number % 5 === 0) return 'Buzz';
+  return number;
 };
 
 test("0 => 'Fizzbuzz'", () => {
-  expect(fizzbuzz(0)).toEqual("Fizzbuzz");
+  expect(fizzbuzz(0)).toEqual('Fizzbuzz');
+});
+
+test("3 => 'Fizz'", () => {
+  expect(fizzbuzz(3)).toEqual('Fizz');
+});
+
+test("5 => 'Buzz'", () => {
+  expect(fizzbuzz(5)).toEqual('Buzz');
 });
